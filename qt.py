@@ -22,12 +22,12 @@ class MainWin(QWidget):
         self.initCamera()
 
     def initUI(self):
-        self.layout = QHBoxLayout(self)
+        #self.layout = QHBoxLayout(self)
         self.cb = QCheckBox('Auto Exposure', self)
         self.cb.stateChanged.connect(self.changeAutoExposure)
         self.snap = QPushButton("Snap Still Image", self)
-        self.layout.addWidget(self.cb)
-        self.layout.addWidget(self.snap)
+        #self.layout.addWidget(self.cb)
+        #self.layout.addWidget(self.snap)
         self.label = QLabel(self)
         self.label.setScaledContents(True)
         self.label.move(0, 30)
