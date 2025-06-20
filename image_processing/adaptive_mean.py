@@ -1,7 +1,8 @@
 import cv2
 import matplotlib.pyplot as plt
-image = cv2.imread("image_processing/ROI_snap_40x.png", cv2.IMREAD_GRAYSCALE)
+path = "image_processing/region2_FOV.PNG"
 
+image = cv2.imread(path, cv2.IMREAD_COLOR)
 
 image = cv2.medianBlur(image,5) #removes a lot of noise (and possibly particles)
 

@@ -15,6 +15,8 @@ im2_path = f"image_processing/processed/{sys.argv[2]}"
 im1 = cv2.imread(im1_path, cv2.IMREAD_GRAYSCALE)
 im2 = cv2.imread(im2_path, cv2.IMREAD_GRAYSCALE)
 
+print(f"comparing {im1_path} and {im2_path}")
+
 plt.figure(figsize=(10, 5))
 plt.subplot(121)
 plt.imshow(im1, cmap='gray')

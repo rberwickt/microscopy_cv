@@ -1,7 +1,9 @@
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
-image = cv2.imread("./ROI_snap_40x.png", cv2.IMREAD_COLOR)
+path = "image_processing/region2_FOV.PNG"
+
+image = cv2.imread(path, cv2.IMREAD_COLOR)
 # UNFINISHED
 filter = np.array([[1,1,1],
                   [1,1,1],
