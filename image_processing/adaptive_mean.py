@@ -1,8 +1,8 @@
 import cv2
 import matplotlib.pyplot as plt
-path = "image_processing/region2_FOV.PNG"
+path = "image_processing/region4_FOV.png"
 
-image = cv2.imread(path, cv2.IMREAD_COLOR)
+image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 
 image = cv2.medianBlur(image,5) #removes a lot of noise (and possibly particles)
 
@@ -10,10 +10,10 @@ image = cv2.medianBlur(image,5) #removes a lot of noise (and possibly particles)
 # block size (second to last) must be > 1 and odd
 #adaptive mean
 mean_filtered_image = cv2.adaptiveThreshold(image, 255,cv2.ADAPTIVE_THRESH_MEAN_C,
-                                            cv2.THRESH_BINARY_INV,11,3)
+                                            cv2.THRESH_BINARY_INV,15,3)
 #adaptive gaussian
 gaussian_filtered_image = cv2.adaptiveThreshold(image,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                                cv2.THRESH_BINARY_INV,11,3)
+                                                cv2.THRESH_BINARY_INV,15,3)
 
 # blur testing
 

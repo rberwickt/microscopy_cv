@@ -1,9 +1,9 @@
 import cv2
 import matplotlib.pyplot as plt
 
-path = "image_processing/region2_FOV.PNG"
+path = "image_processing/region4_FOV.png"
 
-image = cv2.imread(path, cv2.IMREAD_COLOR)
+image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 image = cv2.GaussianBlur(image, (3, 3), 0)
 image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 filtered_image = cv2.Laplacian(image_gray, cv2.CV_16S, ksize=3)

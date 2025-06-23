@@ -1,11 +1,16 @@
 import cv2
 import matplotlib.pyplot as plt
-path = "image_processing/region2_FOV.PNG"
+path = "image_processing/region4_FOV.PNG"
 
-image = cv2.imread(path, cv2.IMREAD_COLOR)
+image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 image = cv2.GaussianBlur(image,(5,5),0)
 
-other, filtered_image = cv2.threshold(image,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+#otsu
+#other, filtered_image = cv2.threshold(image,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+
+#global threshold (for testing)
+other, filtered_image = cv2.threshold(image,20,255,cv2.THRESH_BINARY)
+
 # Plot the original and filtered images
 plt.figure(figsize=(10, 5))
 plt.subplot(121)

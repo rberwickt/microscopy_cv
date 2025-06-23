@@ -1,7 +1,17 @@
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
-path = "image_processing/region2_FOV.PNG"
+path = "image_processing/region4_FOV.PNG"
+
+"""
+After looking into filters on the fourier domain a bit more, this doesn't seem like a useful
+    technique for this application, it can help remove noise but it seems like it will erase
+    some particles and/or have the same problem the adaptive mean had where it segments "hollow" shapes.
+    It's definitely possible to fill the donut shaped particles but 
+    it's more of a pain than it's worth IMO
+"""
+
+
 
 image = cv2.imread(path, cv2.IMREAD_COLOR)
 # UNFINISHED
