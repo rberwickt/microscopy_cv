@@ -20,6 +20,11 @@ gaussian_filtered_image = cv2.adaptiveThreshold(image,255,cv2.ADAPTIVE_THRESH_GA
 #gaussian_filtered_image = cv2.GaussianBlur(gaussian_filtered_image, (3, 3), 0)
 #mean_filtered_image = cv2.GaussianBlur(mean_filtered_image, (3, 3), 0)
 
+# tried to close the gaps in the particles, but they seem to be too big relative to the shell
+#kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(5,5))
+#mean_filtered_image = cv2.morphologyEx(mean_filtered_image, cv2.MORPH_CLOSE, kernel) #closing
+
+
 # Plot the original and filtered images
 plt.figure(figsize=(10, 5))
 plt.subplot(131)
