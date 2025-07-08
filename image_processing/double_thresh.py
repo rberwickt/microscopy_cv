@@ -1,6 +1,6 @@
 import cv2
 import matplotlib.pyplot as plt
-path = "image_processing/region4_FOV.PNG"
+path = "image_processing/region4_FOV.png"
 
 image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 image = cv2.GaussianBlur(image,(5,5),0)

@@ -1,6 +1,6 @@
 import cv2
 import matplotlib.pyplot as plt
-path = "image_processing/region4_FOV.png"
+path = "image_processing/region1_FOV.PNG"
 
 image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 
@@ -42,5 +42,5 @@ plt.title('Gaussian Adpt. Threshold')
 plt.show()
 
 #only writes the images to file after you close the graph window
-cv2.imwrite("image_processing/processed/adaptive_mean.jpg", mean_filtered_image)
-cv2.imwrite("image_processing/processed/adaptive_gaussian.jpg", gaussian_filtered_image)
+cv2.imwrite("image_processing/processed/adaptive_mean2.jpg", mean_filtered_image)
+cv2.imwrite("image_processing/processed/adaptive_gaussian2.jpg", gaussian_filtered_image)

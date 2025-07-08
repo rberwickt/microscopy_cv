@@ -1,7 +1,9 @@
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
-
+# !!!!!!!!!!!!!!!!!!!!!!
+# only removes the largest connected components, does no further masking (as opposed to other file)
+# !!!!!!!!!!!!!!!!!!!!!!
 path = "image_processing/processed/adaptive_mean2.jpg"
 masked_path = "image_processing/region1_FOV.png"
 
@@ -20,6 +22,15 @@ print(areas)
 threshold = np.mean(areas)
 print(f"AREA THRESHOLD: {threshold}")
 
+# make the entire image white (to specifically remove the large components)
+shape = image.shape
+cv2.rectangle(image, (0,0), (shape[1] - 1, shape[0] - 1), 255, cv2.FILLED)
+
+plt.figure(figsize=(10, 5))
+
+plt.imshow(image)
+plt.title(f'Fullwhite {shape} -> {(0,0)}/{(shape[1] - 1, shape[0] - 1)}')
+plt.show()
 
 for i in range(1,totalLabels):
     area = areas[i]
@@ -33,6 +44,8 @@ for i in range(1,totalLabels):
 
         # removing
         cv2.rectangle(image, (x,y), (x+width,y+height), 0, cv2.FILLED)
+
+
 
 # masking 
 masked = cv2.bitwise_and(original_image, original_image, mask=image)
